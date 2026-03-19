@@ -50,13 +50,11 @@ def excluir_automovel():
 
     modelo_excluir = input("Digite o modelo que deseja excluir: ")
 
-    for auto in automoveis:
+    for i, auto in enumerate(automoveis):
         if auto[0].lower() == modelo_excluir.lower():
-            automoveis.remove(auto)
-            print("\nAutomóvel removido com sucesso!\n")
+            removido = automoveis.pop(i)
+            print(f"\nAutomóvel {removido[0]} removido com sucesso!\n")
             return
-
-    print("\nAutomóvel não encontrado.\n")
 
 
 def menu():
